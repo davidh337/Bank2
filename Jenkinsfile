@@ -14,5 +14,22 @@ pipeline {
       }
     }
 
+    stage('Step 3') {
+      parallel {
+        stage('Step 3') {
+          steps {
+            sh 'echo step3'
+          }
+        }
+
+        stage('step31') {
+          steps {
+            sh 'echo step31'
+          }
+        }
+
+      }
+    }
+
   }
 }
